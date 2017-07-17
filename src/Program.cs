@@ -19,9 +19,9 @@ namespace ChaosGlobal.ChaosBot
         private const string Token = "";
 
         /// <summary>
-        /// <see cref="ChaosGlobal.ChaosBot.Program"/> のコンストラクターです。
+        /// <see cref="ChaosGlobal.ChaosBot.Program"/> の静的コンストラクターです。
         /// </summary>
-        private Program()
+        static Program()
         {
             Client = new DiscordSocketClient();
         }
@@ -30,7 +30,7 @@ namespace ChaosGlobal.ChaosBot
         /// 既定の Discord API クライアントを取得します。
         /// </summary>
         /// <returns><see cref="ChaosGlobal.ChaosBot"/> が用いる既定の Discord API クライアント</returns>
-        internal DiscordSocketClient Client { get; }
+        internal static DiscordSocketClient Client { get; }
 
         /// <summary>
         /// <see cref="ChaosGlobal.ChaosBot"/> のエントリポイントです。
