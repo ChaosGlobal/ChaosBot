@@ -9,6 +9,11 @@ namespace ChaosGlobal.ChaosBot.Components
     public static class UrnManager
     {
         /// <summary>
+        /// Bot のサムネイルを表す URN です。
+        /// </summary>
+        public const string BotThumbnail = "urn:chaosglobal:chaosbot-currentuser-thumbnail";
+
+        /// <summary>
         /// 内部 URN を 汎用 URL に変換します。
         /// </summary>
         /// <param name="uri">検証する URI</param>
@@ -19,6 +24,8 @@ namespace ChaosGlobal.ChaosBot.Components
             { // パラメーターが URN である場合
                 switch (uri.ToLower())
                 {
+                    case BotThumbnail: // パラメーターが Bot のサムネイルを表す URN である場合
+                        return Client.CurrentUser.GetAvatarUrl(); // Bot のサムネイルが存在する URL を取得して返します。
                     default: // どの内部 URN にも一致しない場合
                         return null; // null を返します。
                 }
